@@ -1,0 +1,53 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{siunitx}
+
+%Modifie la forme du pdf de sortie
+\def\timer{1}             % 0-> sans timer     
+                          % 1-> avec timer
+\def\correction{0}        % 0-> sans correction après chaque question 
+                          % 1-> avec correction après chaque question
+                        
+
+\input{../qflash.tex}   %Modifier cette ligne si qflash.tex se trouve à un autre endroit
+
+\begin{document}
+\begin{quizz}{Exemple d'utilisation de $qflash$}  %titre du quizz
+
+\questionflash
+{ %Question:
+\\ $0,9999...=1 $ ?
+\begin{enumerate}[a.]
+\item OUI
+\item NON
+\end{enumerate}} 
+{ %Durée d'affichage de la question:
+5 }
+{ %Correction 
+\textbf{OUI}
+\\En effet: $10 \times 0,999...=9,999... = 9+0,999...$
+\\On a donc: $9 \times 0,999... = 9$ d'où $0,999...=1$.
+}
+\questionflash{
+\begin{center}
+\includegraphics[scale=1]{figure.png}
+\end{center}
+Quelle est la mesure de l'angle $\widehat{BAC}$ ?
+\begin{enumerate}[a.]
+\item $\ang{145}$ 
+\item $\ang{55}$
+\item $\ang{65}$
+\end{enumerate}
+}{5}
+{\begin{center}
+\includegraphics[scale=0.6]{figure.png}
+\end{center}
+\textbf{Réponse b:}
+\\On utilise la somme des angles d'un triangle: 
+\[ \widehat{BAC} = \ang{180}-\ang{90}-\ang{35}=\ang{90}-\ang{35}=\ang{55}\]
+}
+\end{quizz}
+
+\end{document}

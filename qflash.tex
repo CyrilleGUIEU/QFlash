@@ -1,0 +1,70 @@
+\usepackage{tikz}
+\usepackage{xintexpr}
+\usepackage{pifont}
+
+
+\newcommand{\questionflash}[3]
+{
+\ifnum \timer=1 
+\begin{frame}
+\transduration{1}
+\def\facteur{\xintfloateval{0.875/#2}}
+\foreach \x in {0,...,#2}{\only<+>{
+\textbf{Question \insertframenumber{}} 
+#1    \pgfdeclarehorizontalshading{myshade}{1em}{%
+         color(0\textwidth)=(rgb:green,50;-green,\x;red,\x);
+        color(\x*\facteur\textwidth)=(rgb:green,50;-green,\x;red,\x);     
+        color(0.1\textwidth+\x*\facteur\textwidth)=(white);
+      color(\textwidth)=(white)
+    }
+    \begin{pgfpicture}{0pt}{0pt}{\textwidth}{1em}
+        \pgfpathrectangle{\pgfpointorigin}{\pgfpoint{\textwidth}{1em}}
+    \pgfusepath{clip}
+    \pgftext[left,base]{\pgfuseshading{myshade}}
+    \pgftext[x=.9\textwidth,y=0.5em] {\x s / #2 s}
+  \end{pgfpicture}
+}}
+\end{frame}
+ \else 
+\begin{frame}
+\textbf{Question \insertframenumber{}} 
+#1
+\end{frame} 
+\fi
+
+\ifnum \correction=1
+\addtocounter{framenumber}{-1} 
+\begin{frame}
+\begin{center}
+\textit{Correction de la question \insertframenumber{}}
+\end{center}
+#3
+\end{frame}
+\fi
+}
+
+\newcommand{\titre}[1]{
+\begin{frame}\begin{center}
+ \Large #1
+\end{center}\end{frame}
+\addtocounter{framenumber}{-1} 
+\ifnum \timer=1
+\begin{frame} \transduration{1} \centerline{\fontsize{200}{200}\selectfont \ding{206}} \end{frame}
+\begin{frame} \transduration{1} \centerline{\fontsize{200}{200}\selectfont \ding{205}} \end{frame}
+\begin{frame} \transduration{1} \centerline{\fontsize{200}{200}\selectfont \ding{204}} \end{frame}
+\begin{frame} \transduration{1} \centerline{\fontsize{200}{200}\selectfont \ding{203}} \end{frame}
+\begin{frame} \transduration{1} \centerline{\fontsize{200}{200}\selectfont \ding{202}} \end{frame}
+\begin{frame} \transduration{1} \centerline{\fontsize{200}{200}\selectfont Go !} \end{frame}
+\addtocounter{framenumber}{-6} \fi
+}
+
+
+ \newenvironment{quizz}[1]
+ {\titre{#1}}
+ {\ifnum \timer=1 \begin{frame}
+Fin du quizz
+\end{frame} \fi} 
+
+
+
+
