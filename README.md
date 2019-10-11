@@ -1,6 +1,6 @@
 # QFlash
 
-## Un outil pour élaborer des séries de question flash
+## Un outil pour élaborer des séries de "questions flash"
 
 ### Le principe
 
@@ -21,9 +21,9 @@ Les logiciels nécessaires au fonctionnement de QFlash sont les suivants:
 
 **Pour la lecture en classe ou à partir d'un ENT:**
 
-* Un lecteur PDF qui autorise le défilement automatique (par exemple [Acrobat Reader](https://get.adobe.com/fr/reader/), attention aux logiciels facultatifs qui viennent par défaut avec ce logiciel, vous n'êtes pas obligés de les accepter !)
+* Un lecteur PDF qui autorise le défilement automatique (par exemple [Acrobat Reader](https://get.adobe.com/fr/reader/), attention aux logiciels facultatifs qui viennent par défaut avec ce logiciel, vous n'êtes pas obligés de les installer !)
 
-### Premier pas
+### Premiers pas
 
 1. Compiler l'exemple donné:
 * Téléchager ce dépôt
@@ -37,4 +37,4 @@ Les logiciels nécessaires au fonctionnement de QFlash sont les suivants:
 * Modifier le nom de ce dossier en fonction de votre projet
 * Modifier et renommer le "Script de mise au point" en fonction de vos besoins
 
-**Note:** Il est nécessaire le fichier "qflash.tex" soit trouvé par le fichier tex de définition des questions/réponses. Cela peut ne pas être le cas si vous déplacez le dossier dupliqué.
+**Note:** Il est nécessaire que le fichier "qflash.tex" soit trouvé par le fichier tex de définition des questions/réponses. Cela peut ne pas être le cas si vous déplacez le dossier dupliqué.
