@@ -28,7 +28,7 @@ Les logiciels nécessaires au fonctionnement de QFlash sont les suivants:
 1. Compiler l'exemple donné:
 * Téléchager ce dépôt
 * Depuis un éditeur Latex, ouvrir le fichier "Exemples/Script de mise au point.tex"
-* Compiler ce script en utilisant * *pdflatex* *
+* Compiler ce script en utilisant ***pdflatex***
 * Tester le PDF obtenu
 * Recommencer en modifiant les variables **timer** et **correction** situées au début du script
 
